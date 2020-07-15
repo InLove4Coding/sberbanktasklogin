@@ -1,4 +1,4 @@
-package com.kuzmin.evgenii.sberbanktaskspringsecurity.entity;
+package com.kuzmin.evgenii.sberbanktaskspringsecurity.dto;
 
 import lombok.*;
 
@@ -8,7 +8,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserSessionDTO implements IUserSession {
+public class UserSessionDto {
 
     private UUID sessionId;
     private Long timestamp;

@@ -4,7 +4,9 @@ import com.kuzmin.evgenii.sberbanktaskspringsecurity.entity.UserEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UserRepo extends CrudRepository<UserEntity, Long> {
-    UserEntity findUserEntityByPassword(String password);
+    Optional<UserEntity> findUserByLogin(String login);
 }

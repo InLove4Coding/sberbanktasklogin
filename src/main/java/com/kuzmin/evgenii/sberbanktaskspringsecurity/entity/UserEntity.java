@@ -10,12 +10,12 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString(of = "id")
 @Table(name = "user")
-public class UserEntity implements IUserWithCredentials {
+public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "user_login", nullable = true, unique = true)
+    @Column(name = "user_login", unique = true)
     private String login;
-    @Column(name = "user_password", nullable = true, unique = false)
-    private String password;
+    @Column(name = "user_password")
+    private String passwordHash;
 }
