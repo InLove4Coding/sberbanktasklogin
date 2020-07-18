@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @Transactional
 @SpringBootTest
 @AutoConfigureMockMvc
-class MainControllerTest {
+class AuthControllerTest {
 
     @Autowired
     MockMvc mockMvc;

@@ -4,10 +4,9 @@ import lombok.*;
 
 @Data
 @Builder
-@EqualsAndHashCode(of = "id")
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDto {
-    private Long id;
+    private String Login;
     private String passwordHash;
 }

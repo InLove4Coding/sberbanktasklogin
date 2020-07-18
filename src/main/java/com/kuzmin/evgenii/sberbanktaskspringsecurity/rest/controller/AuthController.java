@@ -9,17 +9,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import javax.security.auth.login.CredentialException;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
-public class MainController {
+@RequestMapping(path = "/auth")
+public class AuthController {
 
     private final SessionService sessionService;
 
-    @PostMapping(path = "/auth/login")
+    @PostMapping(path = "/login")
     public Response<Session> login(@RequestParam String login, @RequestParam String password) {
         Response<Session> response = new Response<>();
         if (StringUtils.isEmpty(login) || StringUtils.isEmpty(password)) {
@@ -33,12 +34,12 @@ public class MainController {
         return response;
     }
 
-    @PostMapping(path = "/auth/logout/{sessionId}")
+    @PostMapping(path = "/logout/{sessionId}")
     public void logoutSession(@PathVariable UUID sessionId) {
-
+          sessionService.logoutSession(sessionId);
     }
 
-    @GetMapping(path = "/auth/session/{login}")
+    @GetMapping(path = "/session/{login}")
     public Response<List<Session>> getActiveSession(@PathVariable String login) {
         Response<List<Session>> response = new Response<>();
         List<Session> activeSession = sessionService.getActiveSession(login);

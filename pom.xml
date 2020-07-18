@@ -67,7 +67,7 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
+                <artifactId>mavenx-checkstyle-plugin</artifactId>
                 <version>3.1.1</version>
                 <reportSets>
                     <reportSet>
